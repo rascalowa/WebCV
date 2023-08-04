@@ -24,7 +24,7 @@
     font-weight: 600;
 
     img {
-        margin: 0 16px;
+        margin: 0 2rem;
       }
   }
 
@@ -81,7 +81,11 @@
     text-decoration: none;
 
     &:hover {
-        opacity: 0.7;
+      opacity: 0.7;
+    }
+
+    &:last-child {
+      margin-right: 2rem;
     }
   }
 
