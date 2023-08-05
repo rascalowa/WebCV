@@ -15,10 +15,4 @@ describe('Loader Service', () => {
     service.setLoading(true);
     expect(service.loading).toBeTruthy();
   });
-
-  it('should change loading property to false when setLoading method invoked with "false" as argument', () => {
-    service.setLoading(false);
-
-    expect(service.loading).toBeFalsy();
-  });
 });

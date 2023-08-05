@@ -10,6 +10,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ExperienceComponent } from './pages/experience/experience.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,8 +21,12 @@ import { LoadingComponent } from './components/loading/loading.component';
     HeaderComponent,
     FooterComponent,
     LoadingComponent,
+    HomeComponent,
+    ExperienceComponent,
+    ContactComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     LayoutModule,

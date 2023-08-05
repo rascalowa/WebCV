@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ExperienceComponent } from './pages/experience/experience.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: AppComponent,
+    component: HomeComponent,
   },
   {
     path: 'experience',
-    component: AppComponent,
+    component: ExperienceComponent,
   },
   {
     path: 'hobby',
-    component: AppComponent,
-    // lazy loading
+    loadChildren: () =>
+      import('./modules/hobby-module/hobby.module').then((m) => m.HobbyModule),
   },
   {
     path: 'contact',
-    component: AppComponent,
+    component: ContactComponent,
   },
   {
     path: '**',
-    component: AppComponent,
+    component: HomeComponent,
   },
 ];
 

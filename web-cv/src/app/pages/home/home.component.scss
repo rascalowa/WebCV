@@ -1,0 +1,26 @@
+.home-container {
+  .banner {
+    background-image: url(../../../assets/images/geo_bluegreen_1920.png);
+    height: 300px;
+    position: relative;
+    bottom: 65px;
+    padding-top: 55px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .main-photo {
+    img {
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      position: relative;
+      bottom: 225px;
+      left: 150px;
+    }
+  }
+
+  .main-text {
+    margin: 5rem;
+  }
+}

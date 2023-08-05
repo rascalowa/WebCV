@@ -1,32 +1,39 @@
 <mat-toolbar>
-    <div class="navbar-brand">
-      <a class="navbar-logo" [routerLink]="'/home'">
-        <img [src]="logoPath" height="50px" [ngClass]="{ 'logo-mobile': isMobile }">
-      </a>
-    </div>
-    <div class="nav-links" *ngIf="!isMobile">
-      <li>
-        <a mat-button routerLink="/home" routerLinkActive="mat-accent">O mnie</a>
-      </li>
-      <li>
-        <a mat-button routerLink="/experience" routerLinkActive="mat-accent">Doświadczenie</a>
-      </li>
-      <li>
-        <a mat-button routerLink="/hobby" routerLinkActive="mat-accent">Zainteresowania</a>
-      </li>
-      <li>
-        <a mat-button routerLink="/contact">Kontakt</a>
-      </li>
-    </div>
-    <div *ngIf="isMobile">
-      <button mat-button [matMenuTriggerFor]="beforeMenu">
-        <mat-icon>menu</mat-icon>
-      </button>
-        <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <a mat-menu-item routerLink="/home" routerLinkActive="mat-accent">O mnie</a>
-        <a mat-menu-item routerLink="/about" routerLinkActive="mat-accent">Doświadczenie</a>
-        <a mat-menu-item routerLink="/offer" routerLinkActive="mat-accent">Zainteresowania</a>
-        <a mat-menu-item routerLink="/contact" routerLinkActive="mat-accent">Kontakt</a>
-      </mat-menu>
-    </div>
-  </mat-toolbar>
+  <div class="nav-links" *ngIf="!isMobile">
+    <li>
+      <a mat-button routerLink="/home" routerLinkActive="mat-accent">O mnie</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/experience" routerLinkActive="mat-accent"
+        >Doświadczenie</a
+      >
+    </li>
+    <li>
+      <a mat-button routerLink="/hobby" routerLinkActive="mat-accent"
+        >Zainteresowania</a
+      >
+    </li>
+    <li>
+      <a mat-button routerLink="/contact">Kontakt</a>
+    </li>
+  </div>
+  <div *ngIf="isMobile">
+    <button mat-button [matMenuTriggerFor]="beforeMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <a mat-menu-item routerLink="/home" routerLinkActive="mat-accent"
+        >O mnie</a
+      >
+      <a mat-menu-item routerLink="/about" routerLinkActive="mat-accent"
+        >Doświadczenie</a
+      >
+      <a mat-menu-item routerLink="/offer" routerLinkActive="mat-accent"
+        >Zainteresowania</a
+      >
+      <a mat-menu-item routerLink="/contact" routerLinkActive="mat-accent"
+        >Kontakt</a
+      >
+    </mat-menu>
+  </div>
+</mat-toolbar>

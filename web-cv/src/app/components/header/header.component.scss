@@ -1,61 +1,48 @@
 mat-toolbar {
-    background: #fff;
-    color: #707070;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    max-height: 4rem;
-    border-bottom: #F0F0F0 solid 1px;
-  }
-  
-  .navbar-brand {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .navbar-logo {
-    padding-top: 4px;
-    display: flex;
-    align-self: center;
-  }
-  
-  .logo-mobile {
-    height: 40px;
-  }
-  
-  .nav-links {
-    display: flex;
-    margin-right: 12px;
-  }
-  
-  li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  a {
-    text-decoration: none;
-    font-weight: 400;
-    color: #707070;
-  }
-  
-  .mat-button {
-    font-weight: 300;
-    font-size: medium;
-  }
-  
-  .mat-button.mat-accent {
-    color: #837d1f;
-    font-weight: 500;
-  }
-  
-  .mat-menu-item {
-    font-weight: 400;
-    font-size: 14px;
-  }
-  
-  .mat-menu-item.mat-accent {
-    color: #837d1f;
-    font-weight: 500;
-  }
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  max-height: 4rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: end;
+  margin-right: 12px;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+  color: #eeeeee;
+}
+
+.mat-button {
+  font-weight: 300;
+  font-size: medium;
+}
+
+.mat-button.mat-accent {
+  color: #837d1f;
+  font-weight: 500;
+}
+
+.mat-menu-item {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.mat-menu-item.mat-accent {
+  color: #837d1f;
+  font-weight: 500;
+}

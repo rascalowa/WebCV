@@ -8,7 +8,6 @@ import { LayoutService } from '../../infrastructure/services/layout.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  logoPath = '../../../assets/NoBorderSnS.png';
   isMobile$: Observable<boolean>;
   isMobile = true;
   componentDestroyed$ = new Subject<void>();
