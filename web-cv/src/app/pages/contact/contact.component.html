@@ -1,1 +1,43 @@
-<p>contact component works!</p>
+<div class="page-container">
+  <div class="banner">
+    <p>contact component works!</p>
+  </div>
+
+  <div class="content">
+    <div class="main-text">
+      Description Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Ipsum, quaerat. Magnam non laudantium quo veritatis consequuntur
+      doloremque assumenda dolore, dignissimos architecto, temporibus minima.
+      Temporibus nobis dolorum odio adipisci.
+    </div>
+    <h3>Contact Form</h3>
+    <div class="form-container">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" />
+
+        <label for="email">Email*</label>
+        <input id="email" type="email" formControlName="email" email />
+
+        <label for="message">Your message*</label>
+        <textarea
+          matInput
+          id="message"
+          formControlName="message"
+          placeholder="Miejsce na Twoją wiadomość.."
+        ></textarea>
+
+        <button
+          type="submit"
+          [disabled]="
+            contactForm.status === 'INVALID' ||
+            !contactForm.value.email ||
+            !contactForm.value.message
+          "
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

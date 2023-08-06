@@ -1,0 +1,65 @@
+.banner {
+  background-image: url(../../../assets/images/geo_bluegreen_1920.png);
+}
+
+.content {
+  h3 {
+    margin-top: 20px;
+  }
+
+  .form-container {
+    font-size: 18px;
+    display: flex;
+    justify-items: center;
+    max-width: 600px;
+
+    form {
+      margin-top: 20px;
+      justify-content: center;
+
+      label {
+        margin-top: 6px;
+      }
+
+      input {
+        width: 100%;
+        font-size: inherit;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        background-color: #f7f7f7;
+        padding: 12px;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        width: 100%;
+        height: 150px;
+        padding: 12px;
+        margin-top: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        background-color: #f7f7f7;
+        box-sizing: border-box;
+        resize: none;
+        font-size: inherit;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        background-color: #3c86ad;
+        color: #fff;
+        font-size: inherit;
+        font-weight: 600;
+        border-radius: 5px;
+        width: 100%;
+        margin: 12px auto;
+
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
