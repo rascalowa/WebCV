@@ -9,10 +9,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-  {
-    path: 'experience',
-    component: ExperienceComponent,
-  },
+  // {
+  //   path: 'experience',
+  //   component: ExperienceComponent,
+  // },
   {
     path: 'hobby',
     loadChildren: () =>

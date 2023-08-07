@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DialogModule } from '@angular/cdk/dialog';
 
 import { HobbyRoutingModule } from './hobby-routing.module';
 import { TravelComponent } from './travel/travel.component';
@@ -14,6 +15,6 @@ import { HobbyComponent } from './hobby/hobby.component';
     KiteComponent,
     HorsesComponent,
   ],
-  imports: [CommonModule, HobbyRoutingModule],
+  imports: [CommonModule, HobbyRoutingModule, DialogModule],
 })
 export class HobbyModule {}
