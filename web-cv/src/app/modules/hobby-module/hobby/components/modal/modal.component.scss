@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  animation: slide 1s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.modal-body {
+  margin: 16px auto;
+}
+
+// TO DO: display close incon on modal
+// .close-icon {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   transform: translate(50%, -50%);
+// }
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}

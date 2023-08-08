@@ -7,10 +7,22 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 export class StorageService {
   constructor(private storage: AngularFireStorage) {}
 
-  getPhoto(fileName: string) {
+  // TO DO Try to unufy - reuse with different arguments
+  getMainPhoto(fileName: string) {
     const photoUrl = new Promise<string>((resolve) => {
       this.storage
         .ref(`${fileName}`)
+        .getDownloadURL()
+        .subscribe((data) => resolve(data));
+    });
+
+    return photoUrl;
+  }
+
+  getPhoto(fileName: string) {
+    const photoUrl = new Promise<string>((resolve) => {
+      this.storage
+        .ref(`hobby/${fileName}`)
         .getDownloadURL()
         .subscribe((data) => resolve(data));
     });

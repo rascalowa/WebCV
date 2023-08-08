@@ -2,20 +2,25 @@
   <div class="banner"></div>
 
   <div class="content" role="main">
-    <h2>Title</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    <h2>Work-life balance</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione et
+      praesentium omnis quod temporibus magnam, dolores aut in deserunt quidem
+      rerum hic laborum expedita aperiam totam iusto doloremque eligendi harum
+      iure non accusantium exercitationem doloribus quibusdam illum! Iure eos
+      nostrum asperiores rerum, ab hic perferendis, eius non natus voluptatum
+      unde aliquid, dolore culpa inventore ex numquam officia. Iste nisi labore
+      sed fuga! Totam quod temporibus, dicta doloribus laboriosam consequatur
+      ratione ducimus vero quam amet cumque similique fuga quo explicabo commodi
+      provident. Soluta ullam minus architecto maxime totam! Rem eligendi esse
+      numquam earum vitae aperiam eum delectus, est nihil ad amet.
+    </p>
     <div class="card-container">
-      <a class="card" routerLink="travel">
-        <span>Travel</span>
-      </a>
-
-      <a class="card" routerLink="kite">
-        <span>Kite</span>
-      </a>
-
-      <a class="card" routerLink="horses">
-        <span>Horses</span>
-      </a>
+      <div *ngFor="let hobby of hobbiesData; let i = index">
+        <button class="card" (click)="openDialog(i)">
+          {{ hobby.hobby }}
+        </button>
+      </div>
     </div>
   </div>
 </div>
