@@ -1,19 +1,22 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { LocalStorageService } from 'src/app/infrastructure/services/local-storage.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
   contactForm: FormGroup;
+  interval: number = 0;
   url = 'https://formspree.io/monikastanko90@gmail.com';
 
   constructor(
     private formBuilder: FormBuilder,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private localStorage: LocalStorageService
   ) {
     this.contactForm = this.formBuilder.group({
       name: [''],
@@ -24,6 +27,37 @@ export class ContactComponent {
 
   // TO DO: Notification - Email successfully sent
   // TO DO: Red borders or error messages for incorrect fields
+
+  ngOnInit() {
+    this.autoFillHandler();
+  }
+
+  ngAfterViewInit() {
+    this.autoSaveHandler();
+  }
+
+  autoFillHandler() {
+    let savedForm = this.localStorage.getItem('contactFormData');
+    console.log(savedForm);
+
+    if (savedForm) {
+      this.contactForm.patchValue({
+        name: savedForm.name,
+        email: savedForm.email,
+        message: savedForm.message,
+      });
+    }
+  }
+
+  autoSaveHandler() {
+    this.interval = window.setInterval(() => {
+      let savedForm = this.localStorage.getItem('contactFormData');
+
+      if (savedForm !== this.contactForm.value && this.contactForm.touched) {
+        this.localStorage.setItem('contactFormData', this.contactForm.value);
+      }
+    }, 60000);
+  }
 
   onSubmit() {
     let url = 'https://formspree.io/f/xeqbeykr';
@@ -39,13 +73,17 @@ export class ContactComponent {
 
     this.httpClient.post<any>(url, data, httpOptions).subscribe({
       next: (data) => {
-        console.log('email sent' + JSON.stringify(data));
         this.contactForm.reset();
+        this.localStorage.removeItem('contactFormData');
       },
       error: (error) => {
         errorMessage = error.message;
         console.log('error!', errorMessage);
       },
     });
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
   }
 }
