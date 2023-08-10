@@ -46,3 +46,20 @@ a {
   color: #837d1f;
   font-weight: 500;
 }
+
+@media screen and (max-width: 800px) {
+  button {
+    color: #fff;
+    background-color: transparent;
+    padding: 1rem;
+    border: none;
+
+    mat-icon {
+      scale: 1.3;
+    }
+  }
+
+  .mat-menu {
+    background-color: transparent;
+  }
+}

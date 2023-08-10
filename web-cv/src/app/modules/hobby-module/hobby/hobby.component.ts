@@ -22,10 +22,10 @@ export class HobbyComponent {
   constructor(private storageService: StorageService, public dialog: Dialog) {}
 
   ngOnInit() {
-    // loader true;
+    const path: string = 'hobby/';
 
     let promiseTravel = this.storageService
-      .getPhoto('travel-min.jpg')
+      .getPhoto('travel-min.jpg', path)
       .then((url) => {
         this.travelPhotoUrl = url;
       })
@@ -34,7 +34,7 @@ export class HobbyComponent {
       });
 
     let promiseKite = this.storageService
-      .getPhoto('kite-min.JPG')
+      .getPhoto('kite-min.JPG', path)
       .then((url) => {
         this.kitePhotoUrl = url;
       })
@@ -43,7 +43,7 @@ export class HobbyComponent {
       });
 
     let promiseHorses = this.storageService
-      .getPhoto('horses-min.jpg')
+      .getPhoto('horses-min.jpg', path)
       .then((url) => {
         this.horsesPhotoUrl = url;
       })
@@ -52,7 +52,7 @@ export class HobbyComponent {
       });
 
     let promiseSnowboard = this.storageService
-      .getPhoto('snowboard-min.jpg')
+      .getPhoto('snowboard-min.jpg', path)
       .then((url) => {
         this.snowboardPhotoUrl = url;
       })
@@ -90,7 +90,6 @@ export class HobbyComponent {
           },
         ])
     );
-    // loader false
   }
 
   openDialog(index: number) {

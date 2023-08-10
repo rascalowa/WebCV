@@ -16,7 +16,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this.storageService
-      .getMainPhoto('MonChee.jpg')
+      .getPhoto('MonChee.jpg')
       .then((url) => {
         this.mainPhoto = url;
         this.cdr.detectChanges();

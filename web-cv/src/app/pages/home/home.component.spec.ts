@@ -7,8 +7,9 @@ describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   const mockedStorageService = {
-    getMainPhoto: () => {},
-    getPhoto: () => {},
+    getPhoto: () => {
+      return Promise.resolve('url');
+    },
   };
 
   beforeEach(() => {
@@ -21,7 +22,14 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create HomeComponent', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should assign the photo url after component creation', async () => {
+    component.mainPhoto = '';
+    await component.ngOnInit();
+
+    expect(component.mainPhoto).toBe('url');
   });
 });

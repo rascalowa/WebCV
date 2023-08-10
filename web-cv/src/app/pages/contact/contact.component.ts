@@ -25,9 +25,6 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  // TO DO: Notification - Email successfully sent
-  // TO DO: Red borders or error messages for incorrect fields
-
   ngOnInit() {
     this.autoFillHandler();
   }
@@ -38,7 +35,6 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
 
   autoFillHandler() {
     let savedForm = this.localStorage.getItem('contactFormData');
-    console.log(savedForm);
 
     if (savedForm) {
       this.contactForm.patchValue({

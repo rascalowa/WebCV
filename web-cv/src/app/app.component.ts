@@ -10,7 +10,6 @@ import { LayoutService } from './infrastructure/services/layout.service';
 })
 export class AppComponent {
   isLoading = false;
-
   isMobile$: Observable<boolean>;
   title = 'Monika Sikora';
 

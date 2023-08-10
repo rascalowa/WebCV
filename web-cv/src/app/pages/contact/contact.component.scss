@@ -1,17 +1,27 @@
+@mixin centralize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .banner {
   background-image: url(../../../assets/images/geo_bluegreen_1920.png);
 }
 
 .content {
-  h3 {
-    margin-top: 20px;
+  .main-text {
+    @include centralize;
+    margin-bottom: 2rem;
+
+    & div {
+      margin-top: 1rem;
+    }
   }
 
   .form-container {
-    font-size: 18px;
-    display: flex;
-    justify-items: center;
+    @include centralize;
     max-width: 600px;
+    margin: 0 0 5rem;
 
     form {
       margin-top: 20px;

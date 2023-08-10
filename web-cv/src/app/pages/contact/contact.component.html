@@ -3,13 +3,21 @@
 
   <div class="content">
     <div class="main-text">
-      Description Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Ipsum, quaerat. Magnam non laudantium quo veritatis consequuntur
-      doloremque assumenda dolore, dignissimos architecto, temporibus minima.
-      Temporibus nobis dolorum odio adipisci.
+      <h3>{{ "Get in Touch" | uppercase }}</h3>
+      <p>
+        Description Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Ipsum, quaerat. Magnam non laudantium quo veritatis consequuntur
+        doloremque assumenda dolore, dignissimos architecto, temporibus minima.
+        Temporibus nobis dolorum odio adipisci. Magnam non laudantium quo
+        veritatis consequuntur doloremque assumenda dolore, dignissimos
+        architecto, temporibus minima.
+      </p>
+      <div>E-Mail: email@email.com</div>
+      <div>Phone: +00 987 654 321</div>
     </div>
-    <h3>Contact Form</h3>
+
     <div class="form-container">
+      <h3>Contact Form</h3>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <label for="name">Name</label>
         <input id="name" type="text" formControlName="name" />

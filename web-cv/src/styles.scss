@@ -5,6 +5,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: block;
 }
 
 :host {
@@ -15,10 +16,6 @@ body {
 
 p {
   margin: 0;
-}
-
-.spacer {
-  flex: 1;
 }
 
 .toolbar {
@@ -43,10 +40,9 @@ p {
   flex-direction: column;
 
   .banner {
-    height: 300px;
+    height: 250px;
     position: relative;
-    bottom: 65px;
-    padding-top: 55px;
+    top: -65px;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -89,7 +85,7 @@ footer {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
   .card-container {
     width: 100%;
   }

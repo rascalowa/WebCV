@@ -11,7 +11,6 @@ export class LocalStorageService {
 
   getItem(key: string): ContactData {
     let data = localStorage.getItem(`${key}`);
-    console.log(data);
     return data ? JSON.parse(data) : null;
   }
 
